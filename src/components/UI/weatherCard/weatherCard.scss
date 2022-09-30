@@ -1,0 +1,26 @@
+@import "../../../styles/colours.scss";
+
+.weatherCard {
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: $textWhite;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  font-weight: lighter;
+
+    p {
+      color: $background;
+    }
+}
+
+  @media (max-width: 390px) {
+    .weatherCard {
+      width: 330px;
+      overflow: hidden;
+      flex-wrap: wrap;
+    }
+  }

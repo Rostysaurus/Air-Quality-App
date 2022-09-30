@@ -1,0 +1,55 @@
+@import "../../styles/colours.scss";
+
+.topbar {
+  min-height: 100px;
+  // max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  overflow: hidden;
+  color: $textWhite;
+
+  @media (max-width: 390px) {
+    padding: 10px;
+  }
+
+  li, h1 {
+    cursor: pointer;
+  }
+
+  .left {
+    flex: .5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    .icon {
+      font-size: 80px;
+      color: $green;
+      cursor: pointer;
+
+      @media (max-width: 390px) {
+        font-size: 40px;
+      }
+    }
+
+    h1 {
+      font-size: 50px;
+      font-weight: 900;
+    }
+  }
+
+  .mid {
+    flex: 1;
+
+    &.mobile {
+      display: none;
+    }
+  }
+
+  .right {
+
+  }
+}
