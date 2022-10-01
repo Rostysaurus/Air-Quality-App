@@ -1,13 +1,27 @@
-import { createContext, useReducer, useEffect } from "react";
+import { createContext, useReducer, useEffect, useMemo } from "react";
 import { searchCityForecast } from "./apiCalls";
+import { selectLocation } from "./searchActions";
 import SearchReducer from "./searchReducer";
 
 const INITIAL_STATE = {
-	weatherData: [],
+	apiData: [],
 	error: false,
 	errorMessage: "",
-	selectedCity: {},
-	selectedLanguage: "en",
+	selectedArea: { state: "", lat: Number, lon: Number },
+	selectedLocation: "",
+	areaData: {
+		coordinates: [],
+		locations: [],
+		longitude: [],
+		latitude: [],
+	},
+	locationData: {
+		area: "",
+		location: "",
+		parameters: [],
+		values: [],
+		units: [],
+	},
 };
 
 export const SearchContext = createContext(INITIAL_STATE);
@@ -15,18 +29,14 @@ export const SearchContext = createContext(INITIAL_STATE);
 export const SearchContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(SearchReducer, INITIAL_STATE);
 
-	useEffect(() => {
-		searchCityForecast(dispatch, state.selectedCity, state.selectedLanguage);
-	}, [state.selectedCity, state.selectedLanguage]);
+	useMemo(() => {
+		searchCityForecast(dispatch, state.selectedArea);
+	}, [state.selectedArea]);
 
 	return (
 		<SearchContext.Provider
 			value={{
-				weatherData: state.weatherData,
-				error: state.error,
-				errorMessage: state.errorMessage,
-				selectedCity: state.selectedCity,
-				selectedLanguage: state.selectedLanguage,
+				...state,
 				dispatch,
 			}}
 		>

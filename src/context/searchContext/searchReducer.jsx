@@ -1,10 +1,14 @@
+import { fillAreaData } from "../../utils/fillAreaData";
+import { fillLocationData } from "../../utils/fillLocationData";
+
 const SearchReducer = (state, action) => {
 	switch (action.type) {
 		case "FETCHING_SUCCESS":
 			return {
 				...state,
-				weatherData: action.payload,
-				selectedCity: state.selectedCity,
+				apiData: action.payload,
+				selectedArea: state.selectedArea,
+				areaData: fillAreaData(action.payload),
 				error: false,
 				errorMessage: "",
 			};
@@ -17,12 +21,13 @@ const SearchReducer = (state, action) => {
 		case "SELECT_CITY":
 			return {
 				...state,
-				selectedCity: action.payload,
+				selectedArea: action.payload,
 			};
-		case "SELECT_LANGUAGE":
+		case "SELECT_LOCATION":
 			return {
 				...state,
-				selectedLanguage: action.payload,
+				selectedLocation: action.payload,
+				locationData: fillLocationData(state.apiData, action.payload),
 			};
 		default:
 			return state;
