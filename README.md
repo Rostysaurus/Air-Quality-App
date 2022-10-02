@@ -1,4 +1,4 @@
-It's a user-friendly wen app that visualizes air quality data from https://docs.openaq.org/docs using [Plotly.js](https://plotly.com/graphing-libraries/)
+It's a user-friendly wen app that visualises air quality data from https://docs.openaq.org/docs using [Plotly.js](https://plotly.com/graphing-libraries/)
 
 ![Screenshot 2022-10-02 at 21 23 16](https://user-images.githubusercontent.com/64093015/193472379-790c227c-7c5c-4395-8dcf-7ee980f8c295.png)
 
