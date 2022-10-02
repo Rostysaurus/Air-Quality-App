@@ -9,7 +9,6 @@ import {
 
 export default function Map() {
 	const { selectedArea, areaData, dispatch } = useContext(SearchContext);
-	console.log(areaData);
 	const [mapBox, setMapBox] = useState({});
 
 	//state objects data

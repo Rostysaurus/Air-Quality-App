@@ -2,7 +2,6 @@ import { mapOverData } from "./mapOverData";
 
 export const fillAreaData = (apiData) => {
 	const { results } = apiData;
-
 	const coordinates = mapOverData(results, "coordinates");
 	const locations = mapOverData(results, "location");
 	const longitude = mapOverData(coordinates, "longitude");
