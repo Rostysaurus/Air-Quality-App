@@ -18,7 +18,7 @@ In the project directory, you can run:
 
 Create a .env file in the src directory and save your free Mabbox Token from https://www.mapbox.com/ as REACT_APP_KEY_MAPBOX_TOKEN
 
-REACT_APP_KEY_MAPBOX_TOKEN=<YourToken>
+REACT_APP_KEY_MAPBOX_TOKEN=<<YourToken>>
 
 To start the app, run:
 
