@@ -1,6 +1,8 @@
 import { createContext, useReducer, useEffect, useMemo } from "react";
+import { germanStates } from "../../utils/germanStates";
 import { searchCityForecast } from "./apiCalls";
-import { selectLocation } from "./searchActions";
+import { selectCity } from "./searchActions";
+
 import SearchReducer from "./searchReducer";
 
 const INITIAL_STATE = {
@@ -21,6 +23,7 @@ const INITIAL_STATE = {
 		parameters: [],
 		values: [],
 		units: [],
+		date: "",
 	},
 };
 
@@ -28,6 +31,17 @@ export const SearchContext = createContext(INITIAL_STATE);
 
 export const SearchContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(SearchReducer, INITIAL_STATE);
+
+	useEffect(() => {
+		const { state, lat, lon } = germanStates.find((s) => s.state === "All");
+		dispatch(
+			selectCity({
+				state,
+				lat,
+				lon,
+			})
+		);
+	}, []);
 
 	useMemo(() => {
 		searchCityForecast(dispatch, state.selectedArea);

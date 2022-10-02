@@ -1,24 +1,32 @@
 @import "../../../styles/colours.scss";
 
 .states {
+	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	list-style-type: none;
+	gap: 20px;
 
 	li {
-		padding: 0 20px;
+		padding: 5px 20px;
 		font-size: 20px;
-		font-weight: 400;
+		font-weight: 200;
 		-webkit-transition: 0.2s ease-in-out;
 		-moz-transition: 0.2s ease-in-out;
 		-ms-transition: 0.2s ease-in-out;
 		-o-transition: 0.2s ease-in-out;
 		transition: 0.2s ease-in-out;
 		letter-spacing: 1px;
+		color: $textWhite;
+		border: 1px solid $textWhite;
+		border-radius: 3px;
+		cursor: pointer;
 
 		&.selected,
 		&:hover {
-			color: $red;
+			border: none;
+			background: #2877b8;
 		}
 	}
 }

@@ -1,5 +1,10 @@
 export const germanStates = [
 	{
+		state: "All",
+		lat: 51.1638175,
+		lon: 10.4478313,
+	},
+	{
 		state: "Berlin",
 		lat: 52.5170365,
 		lon: 13.3888599,

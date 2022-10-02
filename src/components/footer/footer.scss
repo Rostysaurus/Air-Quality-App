@@ -1,21 +1,15 @@
 @import "../../styles/colours.scss";
 
 .footer {
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top:auto;
-  // background-color: #14191e;
-  // background-image: linear-gradient(to top, $background 0%, #537895 100%);
-  a {
-    text-decoration: none;
-    color: $textWhite;
-
-    img {
-      height: 40px;
-    }
-  }
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	margin-top: auto;
+	a {
+		text-decoration: none;
+		color: $textWhite;
+	}
 }

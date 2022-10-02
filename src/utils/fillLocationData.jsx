@@ -1,4 +1,4 @@
-import { mapOverData } from "./mapFunction";
+import { mapOverData } from "./mapOverData";
 
 export const fillLocationData = (apiData, selectedLocation) => {
 	const { results } = apiData;
@@ -10,6 +10,7 @@ export const fillLocationData = (apiData, selectedLocation) => {
 	const parameters = mapOverData(measurements, "parameter");
 	const values = mapOverData(measurements, "value");
 	const units = mapOverData(measurements, "unit");
+	const dates = mapOverData(measurements, "lastUpdated");
 
 	return {
 		area: city,
@@ -17,5 +18,6 @@ export const fillLocationData = (apiData, selectedLocation) => {
 		parameters: parameters,
 		values: values,
 		units: units,
+		date: dates[0],
 	};
 };
