@@ -18,6 +18,8 @@ In the project directory, you can run:
 
 Create a .env file in the src directory and save your free Mabbox Token from https://www.mapbox.com/ as REACT_APP_KEY_MAPBOX_TOKEN
 
+To start the app, run:
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -25,6 +27,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+For testing, run:
 
 ### `npm test`
 
